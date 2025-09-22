@@ -90,7 +90,8 @@ fabric.properties
 
 # Test binary, built with `go test -c`
 *.test
-
+# Go Test source,because it may contain sensitive information that should not be commited.
+*_test.go
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
