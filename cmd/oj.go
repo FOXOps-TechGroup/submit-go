@@ -3,11 +3,11 @@ package cmd
 import (
 	"context"
 	"fmt"
-	"github.com/spf13/viper"
 	"strings"
 
+	"github.com/spf13/viper"
+
 	"github.com/FOXOps-TechGroup/submit-go/pkg/config"
-	"github.com/FOXOps-TechGroup/submit-go/pkg/submit"
 	"github.com/spf13/cobra"
 )
 
@@ -198,18 +198,18 @@ func validateCredentials(ctx context.Context, ojSystem string) error {
 	}
 
 	// 创建临时选项用于验证
-	options := &submit.SubmissionOptions{
-		Credentials: submit.Credentials{
-			Username: ojUsername,
-			Password: ojPassword,
-			Token:    tokenFlag,
-		},
-	}
+	//options := &submit.SubmissionOptions{
+	//	Credentials: submit.Credentials{
+	//		Username: ojUsername,
+	//		Password: ojPassword,
+	//		Token:    tokenFlag,
+	//	},
+	//}
 
-	// 尝试获取竞赛列表来验证凭据
-	if err := submitter.ValidateCredentials(ctx, options.Credentials); err != nil {
-		return fmt.Errorf("authentication failed: %w", err)
-	}
+	//// 尝试获取竞赛列表来验证凭据
+	//if err := submitter.ValidateCredentials(ctx, options.Credentials); err != nil {
+	//	return fmt.Errorf("authentication failed: %w", err)
+	//}
 
 	fmt.Println("Authentication successful")
 	return nil

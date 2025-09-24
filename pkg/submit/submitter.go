@@ -23,7 +23,7 @@ type ContestInfo struct {
 // ProblemInfo 表示问题信息
 type ProblemInfo struct {
 	ID    string
-	Label string
+	Label string //就是ABCD那个序号……草
 	Name  string
 }
 
@@ -84,6 +84,6 @@ type Submitter interface {
 	// InferEntryPoint 推断入口点
 	InferEntryPoint(ctx context.Context, languageInfo *LanguageInfo, filename string) (string, error)
 
-	// ValidateCredentials 验证凭据，这个方法不应该做出除鉴权以外的任何举动
-	ValidateCredentials(ctx context.Context, credentials Credentials) error
+	//// ValidateCredentials 验证凭据，这个方法不应该做出除鉴权以外的任何举动
+	//ValidateCredentials(ctx context.Context, credentials Credentials) error
 }
