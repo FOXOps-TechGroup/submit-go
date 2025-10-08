@@ -26,12 +26,12 @@ type EditSettingsError struct {
 }
 
 func (e EditSettingsError) Error() string {
-	return fmt.Sprintf("created default configuration file at %s, please edit it with your settings",
+	return fmt.Sprintf("created example configuration file at %s, please edit it with your settings",
 		e.configPath)
 }
 
 // Read loads configuration from $HOME/.config/submit/config.yaml
-// If the file doesn't exist, it creates a default one and returns an error
+// If the file doesn't exist, it creates a example one and returns an error
 func Read() error {
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
@@ -56,7 +56,7 @@ func Read() error {
 
 		yamlData, err := yaml.Marshal(defaultConfig)
 		if err != nil {
-			return fmt.Errorf("failed to create default config: %w", err)
+			return fmt.Errorf("failed to create example config: %w", err)
 		}
 
 		if err := os.WriteFile(configPath, yamlData, 0644); err != nil {
@@ -80,7 +80,7 @@ func Read() error {
 		return fmt.Errorf("failed to parse config file: %w", err)
 	}
 
-	utils.Logger.Debug("config file read: %+v", GlobalConfig)
+	utils.Logger.Debug("config file read", "config", GlobalConfig)
 
 	return nil
 }
