@@ -15,10 +15,6 @@ var flags = []cli.Flag{
 		Aliases: []string{"p"},
 		Usage:   "to submit a print request",
 	},
-	&cli.BoolFlag{
-		Name:  "version",
-		Usage: "check the version",
-	},
 	&cli.StringFlag{
 		Name:    "cid",
 		Aliases: []string{"c"},
