@@ -19,4 +19,5 @@ var Root = &cli.Command{
 	// but "--version" is still valid
 	UseShortOptionHandling: true,
 	Before:                 BeforeHandle,
+	Action:                 CommandHandle,
 }
